@@ -1,0 +1,1 @@
+document.write("<h1>어서 오세요</h1>");

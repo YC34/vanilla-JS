@@ -2,5 +2,10 @@
 var heading = document.querySelector('#heading');
 
 heading.onclick = function (){
-    heading.style.color = "red";
-}
+    if(confirm("클릭하실래요?")){
+        heading.style.color = "red";
+    }else {
+        heading.style.color = "blue";
+    }
+
+};
