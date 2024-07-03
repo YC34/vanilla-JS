@@ -5,8 +5,6 @@ build/
 !**/src/test/**/build/
 test.iml
 
-opt/
-
 ### IntelliJ IDEA ###
 .idea
 .idea/modules.xml
