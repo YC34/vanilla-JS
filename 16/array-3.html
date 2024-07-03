@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array 객체의 메서드</title>
+</head>
+<body>
+    <script>
+        var nums = [1,2,3];
+        var chars = ["a","b","c","d"];
+
+        var numsCopy = [...nums];
+        var charsCopy = [...chars];
+
+        var numChars = numsCopy.concat(chars);
+        document.write("배열을 복사하여 사용하여 원본 배열을 변화하지 않는다. <br>")
+        document.write(`concat()<br>nums에 chars 합치면 : ${numChars} <br>`);
+        var charsNums = charsCopy.concat(nums);
+        document.write(`chars에 nums를 합치면 : ${charsNums}`);
+        document.write("<hr>");
+        // 배열 내의 요소 합치기
+        var string1 = numsCopy.join();
+        document.write(`join()<br>구분자 없이 : ${string1} <br>`);
+        var string2 = numsCopy.join('/');
+        document.write(`구분자 지정 : ${string2}`);
+        document.write("<hr>");
+
+        // 요소 추가
+        // push를 사용하면 원본이 바뀌어버림.
+        var ret1 = numsCopy.push(4,5); // 배열 끝에 추가.
+        document.write(`push()<br> length : ${ret1}  배열 : ${nums}<br>`);
+        var ret2 = numsCopy.unshift(0); // 배열 앞에 추가
+        document.write(`unshift()<br> length : ${ret2}  배열 : ${nums}<hr>`);
+
+
+        // 요소 추출
+        var poped1 = charsCopy.pop(); // 마지막
+        document.write(`pop()<br> 꺼낸 요소 : ${poped1} 배열 : ${chars}<br>`);
+        var poped2 = charsCopy.shift(); // 첫번쨰
+        document.write(`shift()<br> 꺼낸 요소 : ${poped2} 배열 : ${chars}<hr>`);
+
+
+    </script>
+</body>
+</html>

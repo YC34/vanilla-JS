@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>공부 챌린지</title>
+    <style>
+        #container {
+            margin: 50px auto;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 2px double #222;
+            background-color: #d8f0fc;
+            text-align: center;
+        }
+        .accent{
+            font-size: 1.8em;
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>풀스택과정 <br>공부일</h1>
+        <p>
+            <span class="accent" id="result"></span>
+            일 연속으로<br>
+            공부를 하고 있습니다.
+        </p>
+        <p>축하합니다!</p>
+    </div>
+    <script>
+        var now = new Date();
+        var firstDay = new Date("2024-04-25");
+
+        var toNow = now.getTime();
+        var toFirst = firstDay.getTime();
+
+        var passedTime = toNow - toFirst;
+        var passedDay = Math.round(passedTime/1000/60/60/24);
+
+        document.querySelector('#result').innerText = passedDay
+
+
+    </script>
+</body>
+</html>

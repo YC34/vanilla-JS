@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array 객체의 메서드</title>
+</head>
+<body>
+    <p>splice 메서드 사용하기</p>
+    <script>
+        // 인수가 한개인 경우
+        var numbers = [1,2,3,4,5];
+        var numbersCopy = [...numbers]
+        var newNumbers = numbersCopy.splice(2);
+        document.write("<hr>");
+        document.write(`splice()<br>원본 배열 : ${numbers}<br>copy한 배열 : ${numbersCopy}<br>copy배열을 이용해 1개의 인수를 사용한 배열 : ${newNumbers}`);
+        document.write("<hr>");
+
+        // 인수가 2개인 경우
+        var study = ["html","css","javaScript","jsp"];
+        var studyCopy = [...study];
+        var newStudy = studyCopy.splice(2,1);
+        document.write(`원본 배열 : ${study}<br> copy한 배열 : ${studyCopy}<br>copy배열을 이용해 2개의 인수 사용한 배열: ${newStudy}`);
+        document.write("<hr>");
+
+        // 인수가 3개인 경우
+        var newStudy2 = studyCopy.splice(2,1,'js');
+        document.write(`변경된 배열 : ${studyCopy}<br>copy배열을 이용해 3개의 인수 사용한 배열: ${newStudy2}`);
+
+        // splice 리턴값은 삭제 값
+        // 원본 배열은 변경 두번째 파라미터에 따라 추가되기도 할수도 있고 변경 될 수도 있다.
+    </script>
+</body>
+</html>

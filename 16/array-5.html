@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array 객체의 메서드 </title>
+</head>
+<body>
+    <script>
+
+        // slice() 추출한 요소로 배열 만듦, 기존 배열 변경 안됨.
+        // copy를 사용하지 않아도 됨.
+        var colors = ["red","green","blue","white","black"];
+        var colors2 = colors.slice(2);
+        document.write(`<hr>slice() 사용한 배열 : ${colors2}<br> 원본 배열 : ${colors}<br>`);
+
+        var colors3 = colors.slice(2,4);
+        document.write(`2~4까지를 slice한 경우의 배열 : ${colors3}`);
+
+    </script>
+</body>
+</html>
