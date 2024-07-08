@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event</title>
+</head>
+<body>
+    <input type="text" >
+    <button>클릭</button>
+    <script>
+        const bitnE1 = document.querySelector("button");
+        bitnE1.addEventListener("click",function(){
+            console.log('click Event');
+        });
+
+        const keyDownEvent = () => {
+            console.log('keydown event');
+        };
+
+
+        const inputE1 = document.querySelector("input");
+        inputE1.addEventListener("keydown", keyDownEvent);
+
+
+
+
+    </script>
+</body>
+</html>

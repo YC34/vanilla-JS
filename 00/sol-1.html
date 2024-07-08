@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>연습문제 1</title>
+    <style>
+      ul {
+        list-style: none; /* 글머리 기회 */
+
+        }
+      li {
+        font-size: 20px;
+        line-height: 35px;
+      }
+      .check {
+        color: #999;
+        font-size: 20px;
+        margin-right: 25px;
+      }
+
+    </style>
+</head>
+<body>
+    <h1>할일 목록</h1>
+    <ul>
+      <li><span class="check">&check;</span>할일 1</li>
+      <li><span class="check">&check;</span>할일 2</li>
+      <li><span class="check">&check;</span>할일 3</li>
+      <li><span class="check">&check;</span>할일 4</li>
+      <li><span class="check">&check;</span>할일 5</li>
+    </ul>
+    <script>
+      // const checkE1 = document.querySelectorAll("li");
+      // checkE1.forEach((el) => {
+      //   el.addEventListener("click", (e) => {
+      //     const target = e.currentTarget;
+      //     if (e.target.style.color === 'rgb(153, 153, 153)') {
+      //       target.style.color = '#000';
+      //       target.style.textDecoration = 'none';
+      //     } else {
+      //       target.style.color = '#999';
+      //       target.style.textDecoration = 'line-through';
+      //     }
+      //   });
+      // });
+      const checkE1 = document.querySelectorAll(".check");
+      checkE1.forEach((el) => {
+        el.addEventListener("click",function() {
+          if (this.style.color === 'rgb(204, 204, 204)'){
+          // if (this.style.textDecoration === 'line-through'){
+           this.style.color = '#999';
+            this.parentNode.style.color = '#000';
+            this.parentNode.style.textDecoration = 'none';
+          } else {
+            this.style.color = '#ccc';
+            this.parentNode.style.color = '#ccc';
+            this.parentNode.style.textDecoration = 'line-through';
+          }
+        });
+      });
+
+
+    </script>
+</body>
+</html>

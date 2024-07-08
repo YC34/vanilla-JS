@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>연습문제 2</title>
+    <style>
+       form {
+         margin-bottom: 30px;
+
+       }
+       input[type="text"] {
+         width: 30px;
+         height: 20px;
+         text-align: center;
+       }
+       button {
+         margin-left: 10px;
+       }
+       table {
+         width: 300px;
+       }
+       table, td {
+         border: 1px solid #ccc;
+         border-collapse: collapse;
+       }
+       td {
+         padding: 10px;
+       }
+    </style>
+</head>
+<body>
+    <form action="" return="false">
+      <input type="text" id="rCount" value="1">행
+      <input type="text" id="cCount" value="1">열
+      <button type="button" onclick="writeTable()">작성</button>
+    </form>
+    <div id="contents"></div>
+    <script>
+        // 새로운 요소 추가하기 : tag : createElement(),
+        // text : createTextNode(), 자식 요소로 추가 : appendChild()
+        // 속성 생성 : createAttribute() , setAttributeNode(): 요소에 속성 추가
+
+
+
+
+        function writeTable(){
+          const contents = document.querySelector("#contents");
+          const rCount = document.querySelector("#rCount").value;
+          const cCount = document.querySelector("#cCount").value;
+
+          console.log(rCount);
+          console.log(cCount);
+
+          // 전에 했던 내용을 삭제하기 위함.
+          while (contents.firstChild) {
+            contents.removeChild(contents.firstChild);
+          }
+
+          // 1. table요소 만들기
+          const table = document.createElement("table");
+
+          for (let i = 0; i <rCount ; i++) {
+            // 2. 입력한 행의 개수만큼 반복하면서 tr요소 만들기 . (0이므로 rCount보다 작을떄까지.)
+            const tr = document.createElement("tr");
+            for (let j = 0; j <cCount ; j++) {
+              // 3. td 요소 만들기
+              const td = document.createElement("td");
+
+              // 4. td태그 안에 노드의 자식 노드로 만들기.
+              td.appendChild(document.createTextNode(`${i}, ${j}`));
+              // 5. td요소를 tr 요소의 노드의 자식노드로 만들기.
+              tr.appendChild(td);
+            }
+            // 6. tr요소 노드를 table요소 노드의 자식노드로 만들기.
+            table.appendChild(tr);
+          }
+          // 7. table 요소 노드를 div에 추가.
+          contents.appendChild(table);
+        };
+
+    </script>
+</body>
+</html>
